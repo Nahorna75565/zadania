@@ -5,11 +5,12 @@
 }
 
 body {
-  font-family: 'Segoe UI', sans-serif;
+  font-family: 'Verdana', Geneva, sans-serif;
   background-color: #fff0f0;
   display: flex;
   justify-content: center;
   padding: 40px 20px;
+  line-height: 1.5;
 }
 
 .cv-paper {
@@ -19,7 +20,7 @@ body {
   flex-direction: column;
   border-radius: 12px;
   overflow: hidden;
-  border: 2px solid #e74c3c; /* дополнительное отличие */
+  border: 4px double #c0392b; 
 }
 
 header {
@@ -28,6 +29,15 @@ header {
   color: white;
   padding: 30px;
   align-items: center;
+}
+
+header h1 {
+  text-decoration: underline;
+  text-decoration-color: #f5b7b1;
+  text-decoration-thickness: 5px;
+  text-underline-offset: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .photo-box {
@@ -46,6 +56,9 @@ header {
 .subtitle {
   color: #f5b7b1;
   font-weight: bold;
+  letter-spacing: 3px;
+  font-size: 0.9em;
+  font-style: italic;
 }
 
 main {
@@ -62,10 +75,17 @@ main {
   gap: 20px;
 }
 
+.left-col h2 {
+  font-size: 1.2em;
+  border-bottom: 1px solid #f5b7b1;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
 .skill-category {
   background-color: #922b21;
   padding: 15px;
-  border-radius: 8px;
+  border-radius: 4px;
 }
 
 .right-col {
@@ -77,15 +97,18 @@ main {
 }
 
 .section-content {
-  border: 2px solid #f5b7b1;
+  border-left: 5px solid #c0392b;
   padding: 15px;
-  border-radius: 4px; /* было 8px → отличие */
+  border-radius: 0 4px 4px 0;
   background-color: #fff5f5;
 }
 
 .year {
   font-weight: bold;
   color: #e74c3c;
+  font-variant-numeric: tabular-nums;
+  background: #fdeaea;
+  padding: 2px 5px;
 }
 
 .contact-box {
@@ -93,6 +116,7 @@ main {
   background-color: rgba(192, 57, 43, 0.2);
   padding: 15px;
   border-radius: 8px;
+  border: 1px dashed white;
 }
 
 .contact-box a {
@@ -100,6 +124,7 @@ main {
   text-decoration: none;
   display: block;
   margin-top: 5px;
+  font-weight: bold;
 }
 
 .footer {
@@ -111,5 +136,5 @@ main {
 }
 
 .contact-box a:hover {
-  text-decoration: underline;
+  text-decoration: underline overline;
 }
