@@ -77,7 +77,7 @@ async function wczytajDane() {
         });
 
 
-        const ulJęzyki = document.getElementById('lista-językow');
+        const ulJęzyki = document.getElementById('lista-języków');
         dane.jezyki.forEach(język => {
             const li = document.createElement('li');
             li.textContent = język;
