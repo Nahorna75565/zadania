@@ -30,7 +30,6 @@ header {
   align-items: center;
 }
 
-/* ЛИНИЯ ПОД ИМЕНЕМ */
 header h1 {
   border-bottom: 2px solid #f5b7b1; 
   padding-bottom: 5px;            
@@ -99,7 +98,7 @@ main {
 
 .contact-box {
   margin-top: auto;
-  background-color: rgba(192, 57, 43, 0.2);
+  background-color: #922b21;
   padding: 15px;
   border-radius: 8px;
 }
@@ -133,6 +132,7 @@ main {
   border-radius: 50px; 
   z-index: 1000;
   display: flex;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   gap: 10px;
   border: none; 
 }
@@ -147,4 +147,34 @@ main {
   background-color: #fff;
   transition: all 0.3s ease;
   margin: 0;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+#contactForm input, #contactForm textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+}
+
+#contactForm textarea {
+  height: 60px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 7px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #c0392b; 
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
 }
