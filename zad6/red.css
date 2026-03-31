@@ -30,12 +30,11 @@ header {
   align-items: center;
 }
 
-/* ЛИНИЯ ПОД ИМЕНЕМ */
 header h1 {
   border-bottom: 2px solid #f5b7b1; 
-  padding-bottom: 5px;            
-  margin-bottom: 5px;            
-  display: inline-block;          
+  padding-bottom: 5px;             
+  margin-bottom: 5px;              
+  display: inline-block;           
 }
 
 .photo-box {
@@ -84,12 +83,11 @@ main {
   gap: 25px;
 }
 
-
 .section-content {
   border-left: 4px solid #f5b7b1; 
-  padding: 10px 15px;            
+  padding: 10px 15px;             
   background-color: #fff5f5;
-  border-radius: 0;               
+  border-radius: 0;                
 }
 
 .year {
@@ -99,7 +97,7 @@ main {
 
 .contact-box {
   margin-top: auto;
-  background-color: rgba(192, 57, 43, 0.2);
+  background-color: #922b21;
   padding: 15px;
   border-radius: 8px;
 }
@@ -124,19 +122,70 @@ main {
 }
 
 .controls {
-  text-align: center;
-  padding: 10px;
-  background: #fff; 
-  border-bottom: 1px solid #ddd;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9); 
+  padding: 15px;
+  border-radius: 50px; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  border: none;
 }
 
 .controls button {
-  padding: 5px 12px;        
-  font-size: 12px;         
-  cursor: pointer;          
-  border: 1px solid #ccc;  
-  border-radius: 4px;     
-  background-color: #f8f9fa;
-  margin: 0 5px;       
-  transition: 0.3s;    
+  padding: 8px 15px; 
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 20px; 
+  background-color: #fff;
+  transition: all 0.3s ease;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+#contactForm input, #contactForm textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  display: block;
+}
+
+#contactForm textarea {
+  height: 60px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #c0392b; 
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  margin-top: 5px;
+}
+
+.submit-btn:hover {
+  background-color: #d5f5e3;
+}
+
+#error-message {
+  font-size: 11px;
+  margin-top: 5px;
+  line-height: 1.2;
 }
