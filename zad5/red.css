@@ -32,9 +32,9 @@ header {
 
 header h1 {
   border-bottom: 2px solid #f5b7b1; 
-  padding-bottom: 5px;            
-  margin-bottom: 5px;            
-  display: inline-block;          
+  padding-bottom: 5px;             
+  margin-bottom: 5px;              
+  display: inline-block;           
 }
 
 .photo-box {
@@ -83,12 +83,11 @@ main {
   gap: 25px;
 }
 
-
 .section-content {
   border-left: 4px solid #f5b7b1; 
-  padding: 10px 15px;            
+  padding: 10px 15px;             
   background-color: #fff5f5;
-  border-radius: 0;               
+  border-radius: 0;                
 }
 
 .year {
@@ -122,19 +121,18 @@ main {
   text-decoration: underline;
 }
 
-
 .controls {
-  position: fixed;  
+  position: fixed;
   bottom: 20px;
   right: 20px;
   background: rgba(255, 255, 255, 0.9); 
   padding: 15px;
   border-radius: 50px; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   z-index: 1000;
   display: flex;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
   gap: 10px;
-  border: none; 
+  border: none;
 }
 
 .controls button {
@@ -160,6 +158,7 @@ main {
   border-radius: 4px;
   font-size: 13px;
   font-family: inherit;
+  display: block;
 }
 
 #contactForm textarea {
@@ -169,7 +168,7 @@ main {
 
 .submit-btn {
   width: 100%;
-  padding: 7px;
+  padding: 8px;
   border: none;
   border-radius: 4px;
   background-color: #ffffff;
@@ -177,4 +176,16 @@ main {
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
+  display: block;
+  margin-top: 5px;
+}
+
+.submit-btn:hover {
+  background-color: #d5f5e3;
+}
+
+#error-message {
+  font-size: 11px;
+  margin-top: 5px;
+  line-height: 1.2;
 }
