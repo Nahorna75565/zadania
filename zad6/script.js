@@ -69,19 +69,19 @@ async function wczytajDane() {
         const odpowiedz = await fetch('data.json'); 
         const dane = await odpowiedz.json();        
 
-        const ulUmiejetnośći = document.getElementById('lista-umiejetnosci');
-        dane.umiejetnosci.forEach(umiejętność => {
+        const ulUmiejetności = document.getElementById('lista-umiejętności');
+        dane.umiejętności.forEach(umiejętność => {
             const li = document.createElement('li');
             li.textContent = umiejętność;
-            ulUmiejetnośći.appendChild(li);
+            ulUmiejetności.appendChild(li);
         });
 
 
-        const ulJezyki = document.getElementById('lista-jezykow');
+        const ulJęzyki = document.getElementById('lista-językow');
         dane.jezyki.forEach(język => {
             const li = document.createElement('li');
             li.textContent = język;
-            ulJezyki.appendChild(li);
+            ulJęzyki.appendChild(li);
         });
 
         console.log("Dane zostały pomyślnie wczytane z JSON");
