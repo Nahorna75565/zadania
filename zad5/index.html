@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CV - Yuliia Nahorna</title>
+  <link rel="stylesheet" href="green.css">
+</head>
+
+<body>
+
+  <div class="cv-paper">
+    <header>
+      <div class="photo-box">
+        <img src="https://i.ibb.co/jZ6cH2p3/photo-2025-12-14-14-25-24-1.jpg" alt="Yuliia Nahorna">
+      </div>
+      <div class="name-box">
+        <h1>Yuliia Nahorna</h1>
+        <div class="subtitle">Studentka Informatyki</div>
+      </div>
+    </header>
+
+    <main>
+      <aside class="left-col">
+        <section class="skill-category">
+          <h2>Umiejętności</h2>
+          <ul>
+            <li>Podstawy HTML i CSS</li>
+            <li>Projektowanie baz danych SQL</li>
+            <li>Podstawy programowania C#</li>
+            <li>Podstawy programowania Python</li>
+            <li>Praca zespołowa</li>
+            <li>Dobra organizacja pracy</li>
+          </ul>
+        </section>
+
+        <section class="skill-category">
+          <h2>Języki</h2>
+          <ul>
+            <li>Polski - poziom C1</li>
+            <li>Ukraiński – poziom C2</li>
+            <li>Rosyjski – poziom C2</li>
+            <li>Angielski - poziom B2</li>
+          </ul>
+        </section>
+
+        <section class="skill-category">
+          <h2>Napisz do mnie</h2>
+          <form id="contactForm">
+            <div class="form-group">
+              <input type="text" id="firstName" placeholder="Imię">
+            </div>
+            <div class="form-group">
+              <input type="text" id="lastName" placeholder="Nazwisko">
+            </div>
+            <div class="form-group">
+              <input type="text" id="email" placeholder="E-mail">
+            </div>
+            <div class="form-group">
+              <textarea id="message" placeholder="Wiadomość..."></textarea>
+            </div>
+            <button type="submit" class="submit-btn">Wyślij</button>
+            <p id="error-message"></p>
+          </form>
+        </section>
+
+        <section class="contact-box">
+          <h2>Kontakt</h2>
+          <p>Warszawa</p>
+          <a href="tel:+48796054519">+48 796 054 519</a>
+          <a href="mailto:yuliianahorna08@gmail.com">yuliianahorna08@gmail.com</a>
+          <a href="https://github.com/Nahorna75565" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/yuliia-nahorna-1573393b8/" target="_blank">LinkedIn</a>
+        </section>
+      </aside>
+
+      <div class="right-col">
+        <section>
+          <h2>O mnie</h2>
+          <div class="section-content">
+            <p>
+              Jestem studentką informatyki, zainteresowaną tworzeniem gier oraz rozwojem w obszarze IT.
+              Posiadam podstawową wiedzę z zakresu programowania (C#, Python), baz danych oraz tworzenia stron internetowych.
+              Jestem osobą odpowiedzialną, zmotywowaną i chętną do nauki oraz zdobywania nowych doświadczeń.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Doświadczenie</h2>
+          <div class="section-content">
+            <article>
+              <span class="year">2026 - Obecnie</span>
+              <strong>Projekt bazy danych</strong>
+              <p>Tworzenie struktury bazy danych oraz praca z zapytaniami SQL w ramach zajęć.</p>
+              <br>
+              <strong>Projekty w C#</strong>
+              <p>Tworzenie prostych aplikacji, w tym programów związanych z zadaniami matematycznymi.</p>
+            </article>
+
+            <article>
+              <span class="year">2022 - 2023</span>
+              <strong>Projekt strony internetowej</strong>
+              <p>Stworzenie prostych stron internetowych z wykorzystaniem HTML.</p>
+              <br>
+              <strong>Grafika 3D</strong>
+              <p>Tworzenie prostych modeli 3D oraz zapoznanie się z podstawami pracy w programie Blender.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>Edukacja</h2>
+          <div class="section-content">
+            <article>
+              <span class="year">2025 - obecnie</span>
+              <strong>Akademia Finansów i Biznesu Vistula</strong>
+              <p>Informatyka</p>
+            </article>
+          </div>
+        </section>
+
+        <section id="projectsSection">
+          <h2>Projekty</h2>
+          <div class="section-content">
+            <ul>
+              <li>System zarządzania bazą danych dla aplikacji</li>
+              <li>Aplikacje matematyczne w C#</li>
+              <li>Proste strony internetowe</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+
+  <div class="controls">
+    <button id="przyciskMotywu">Zmień kolor</button>
+    <button id="przyciskSekcji">Projekty</button>
+  </div>
+
+  <footer class="footer">
+    75565
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
