@@ -1,23 +1,62 @@
-const btnMotyw = document.getElementById('przyciskMotywu');
-const linkTag = document.querySelector('link[rel="stylesheet"]');
+const themeButton = document.getElementById('przyciskMotywu');
+const stylesheetLink = document.querySelector('link[rel="stylesheet"]');
 
-btnMotyw.addEventListener('click', () => {
-    if (linkTag.getAttribute('href') === 'green.css') {
-        linkTag.setAttribute('href', 'red.css');
+themeButton.addEventListener('click', () => {
+    if (stylesheetLink.getAttribute('href') === 'green.css') {
+        stylesheetLink.setAttribute('href', 'red.css');
     } else {
-        linkTag.setAttribute('href', 'green.css');
+        stylesheetLink.setAttribute('href', 'green.css');
     }
     console.log("75565: Zmiana motywu");
 });
 
-const btnUkryj = document.getElementById('przyciskSekcji');
-const sekcjaProjektow = document.getElementById('projectsSection');
+const toggleSectionButton = document.getElementById('przyciskSekcji');
+const projectsSection = document.getElementById('projectsSection');
 
-btnUkryj.addEventListener('click', () => {
-    if (sekcjaProjektow.style.display === 'none') {
-        sekcjaProjektow.style.display = 'block';
+toggleSectionButton.addEventListener('click', () => {
+    if (projectsSection.style.display === 'none') {
+        projectsSection.style.display = 'block';
     } else {
-        sekcjaProjektow.style.display = 'none';
+        projectsSection.style.display = 'none';
     }
     console.log("75565: Przełączenie sekcji");
+});
+
+const formElement = document.getElementById('contactForm');
+const errorMessage = document.getElementById('error-message');
+
+formElement.addEventListener('submit', (e) => {
+    e.preventDefault();
+    
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    
+    let errors = [];
+    
+    const namePattern = /^[a-zA-ZĄ-ż\s]+$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!firstName || !lastName || !email || !message) {
+        errors.push("Wszystkie pola są obowiązkowe.");
+    } else {
+        if (!namePattern.test(firstName) || !namePattern.test(lastName)) {
+            errors.push("Imię i nazwisko nie mogą zawierać cyfr.");
+        }
+        
+        if (!emailPattern.test(email)) {
+            errors.push("Podaj poprawny adres e-mail.");
+        }
+    }
+
+    if (errors.length > 0) {
+        errorMessage.style.color = "#ffcccc";
+        errorMessage.innerHTML = errors.join("<br>");
+    } else {
+        errorMessage.style.color = "#90ee90";
+        errorMessage.innerText = "Wysłano pomyślnie!";
+        console.log("75565: Formularz wysłany poprawnie");
+        formElement.reset();
+    }
 });
