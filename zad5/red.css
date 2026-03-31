@@ -124,6 +124,9 @@ main {
 }
 
 .controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
   text-align: center;
   padding: 10px;
   background: #fff; 
