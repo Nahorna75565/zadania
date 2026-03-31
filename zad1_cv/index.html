@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CV - Yuliia Nahorna</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Times New Roman', sans-serif;
+      background-color: #f0f2f5;
+      display: flex;
+      justify-content: center;
+      padding: 40px 20px;
+    }
+
+    .cv-paper {
+      width: 850px;
+      background: white;
+      display: flex;
+      flex-direction: column;
+      border-radius: 12px;
+      overflow: hidden;
+
+    }
+
+    header {
+      display: flex;
+      background-color: #2c3e50;
+      color: white;
+      padding: 30px;
+      align-items: center;
+    }
+
+    .photo-box {
+      width: 150px;
+      height: 150px;
+      margin-right: 40px;
+      flex-shrink: 0;
+    }
+
+    .photo-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 3px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .name-box h1 {
+      font-size: 32px;
+      margin-bottom: 5px;
+    }
+
+    .name-box .subtitle {
+      font-size: 16px;
+      color: #3498db;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    main {
+      display: flex;
+    }
+
+    .left-col {
+      width: 35%;
+      background-color: #3498db;
+      color: white;
+      padding: 25px 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .skill-category {
+      background-color: #2980b9;
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .left-col h2 {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+
+    .left-col ul {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .left-col li {
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+
+    .right-col {
+      width: 65%;
+      padding: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
+    }
+
+    .right-col h2 {
+      font-size: 18px;
+      color: #2c3e50;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+    }
+
+    .section-content {
+      border: 2px solid #ecf0f1;
+      padding: 15px;
+      border-radius: 8px;
+      background-color: #fafafa;
+    }
+
+    .year {
+      font-weight: bold;
+      color: #3498db;
+      display: block;
+      margin-top: 8px;
+    }
+
+    .contact-box {
+      margin-top: auto;
+      background-color: rgba(0, 0, 0, 0.15);
+      padding: 15px;
+      border-radius: 8px;
+      font-size: 13px;
+    }
+
+    .contact-box a {
+      color: white;
+      text-decoration: none;
+      display: block;
+      margin-top: 5px;
+    }
+
+    .contact-box a:hover {
+      text-decoration: underline;
+    }
+
+    article {
+      margin-bottom: 15px;
+    }
+
+    article:last-child {
+      margin-bottom: 0;
+    }
+    
+  </style>
+</head>
+
+<body>
+
+  <div class="cv-paper">
+    <header>
+      <div class="photo-box">
+        <img src="https://i.ibb.co/jZ6cH2p3/photo-2025-12-14-14-25-24-1.jpg" alt="Yuliia Nahorna">
+      </div>
+      <div class="name-box">
+        <h1>Yuliia Nahorna</h1>
+        <div class="subtitle">Studentka Informatyki</div>
+      </div>
+    </header>
+
+    <main>
+      <aside class="left-col">
+        <section class="skill-category">
+          <h2>Umiejętności</h2>
+          <ul>
+            <li>Podstawy HTML i CSS</li>
+            <li>Projektowanie baz danych SQL</li>
+            <li>Podstawy programowania C#</li>
+            <li>Podstawy programowania Python</li>
+            <li>Praca zespołowa</li>
+            <li>Dobra organizacja pracy</li>
+          </ul>
+        </section>
+
+        <section class="skill-category">
+          <h2>Języki</h2>
+          <ul>
+            <li>Polski - poziom C1</li>
+            <li>Ukraiński – poziom C2</li>
+            <li>Rosyjski – poziom C2</li>
+            <li>Angielski - poziom B2</li>
+          </ul>
+        </section>
+
+        <section class="contact-box">
+          <h2>Kontakt</h2>
+          <p>Warszawa</p>
+          <a href="tel:+48796054519">+48 796 054 519</a>
+          <a href="mailto:yuliianahorna08@gmail.com">yuliianahorna08@gmail.com</a>
+          <a href="https://github.com/Nahorna75565" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/yuliia-nahorna-1573393b8/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </section>
+      </aside>
+
+      <div class="right-col">
+        <section>
+          <h2>O mnie</h2>
+          <div class="section-content">
+            <p>Jestem studentką informatyki, zainteresowaną tworzeniem gier oraz rozwojem w obszarze IT. Posiadam podstawową wiedzę z zakresu programowania (C#, Python), baz danych oraz tworzenia stron internetowych. Jestem osobą odpowiedzialną, zmotywowaną i chętną do nauki oraz zdobywania nowych doświadczeń.</p>
+          </div>
+        </section>
+
+        <section>
+          <h2>Doświadczenie</h2>
+          <div class="section-content">
+            <article>
+              <span class="year">2026 - Obecnie</span>
+              <strong>Projekt bazy danych</strong>
+              <p>Tworzenie struktury bazy danych oraz praca z zapytaniami SQL w ramach zajęć.</p>
+              <br>
+              <strong>Projekty w C#</strong>
+              <p>Tworzenie prostych aplikacji, w tym programów związanych z zadaniami matematycznymi.</p>
+            </article>
+            <article>
+              <span class="year">2022 - 2023</span>
+              <strong>Projekt strony internetowej</strong>
+              <p>Stworzenie prostych stron internetowych z wykorzystaniem HTML.</p>
+              <br>
+              <strong>Grafika 3D</strong>
+              <p>Tworzenie prostych modeli 3D oraz zapoznanie się z podstawami pracy w programie Blender.</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>Edukacja</h2>
+          <div class="section-content">
+            <article>
+              <span class="year">2025 - obecnie</span>
+              <strong>Akademia Finansów i Biznesu Vistula</strong>
+              <p>Informatyka</p>
+            </article>
+          </div>
+        </section>
+
+        <section>
+          <h2>Projekty</h2>
+          <div class="section-content">
+            <ul>
+              <li>System zarządzania bazą danych dla aplikacji</li>
+              <li>Aplikacje matematyczne w C#</li>
+              <li>Proste strony internetowe</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+  </div>
+<footer style="text-align: center; font-size: 12px; color: #888; margin: 5px; padding: 4px;">
+  75565
+</footer>
+
+</body>
+
+</html>
