@@ -123,23 +123,28 @@ main {
   text-decoration: underline;
 }
 
+
 .controls {
-  position: fixed;
+  position: fixed;  
   bottom: 20px;
   right: 20px;
-  text-align: center;
-  padding: 10px;
-  background: #fff; 
-  border-bottom: 1px solid #ddd;
+  background: rgba(255, 255, 255, 0.9); 
+  padding: 15px;
+  border-radius: 50px; 
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  border: none; 
 }
 
 .controls button {
-  padding: 5px 12px;        
-  font-size: 12px;         
-  cursor: pointer;          
-  border: 1px solid #ccc;  
-  border-radius: 4px;     
-  background-color: #f8f9fa;
-  margin: 0 5px;       
-  transition: 0.3s;    
+  padding: 8px 15px; 
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 20px; 
+  background-color: #fff;
+  transition: all 0.3s ease;
+  margin: 0;
 }
