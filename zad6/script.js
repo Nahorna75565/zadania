@@ -1,4 +1,3 @@
-
 const themeButton = document.getElementById('przyciskMotywu');
 const stylesheetLink = document.querySelector('link[rel="stylesheet"]');
 
@@ -10,7 +9,6 @@ themeButton.addEventListener('click', () => {
     }
     console.log("75565: Zmiana motywu");
 });
-
 
 const toggleSectionButton = document.getElementById('przyciskSekcji');
 const projectsSection = document.getElementById('projectsSection');
@@ -24,21 +22,19 @@ toggleSectionButton.addEventListener('click', () => {
     console.log("75565: Przełączenie sekcji");
 });
 
-
 const formElement = document.getElementById('contactForm');
 const errorMessage = document.getElementById('error-message');
 
 formElement.addEventListener('submit', (e) => {
     e.preventDefault();
-    
 
     const firstName = document.getElementById('firstName').value.trim();
     const lastName = document.getElementById('lastName').value.trim();
     const email = document.getElementById('email').value.trim();
     const message = document.getElementById('message').value.trim();
-    
+
     let errors = [];
-    
+
     const namePattern = /^[a-zA-ZĄ-ż\s]+$/;
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -48,7 +44,7 @@ formElement.addEventListener('submit', (e) => {
         if (!namePattern.test(firstName) || !namePattern.test(lastName)) {
             errors.push("Imię i nazwisko nie mogą zawierać cyfr.");
         }
-        
+
         if (!emailPattern.test(email)) {
             errors.push("Podaj poprawny adres e-mail.");
         }
@@ -64,28 +60,34 @@ formElement.addEventListener('submit', (e) => {
         formElement.reset();
     }
 });
+
 async function wczytajDane() {
     try {
-        const odpowiedz = await fetch('data.json'); 
-        const dane = await odpowiedz.json();        
+        const response = await fetch('./data.json');
+
+        if (!response.ok) {
+            throw new Error("Nie znaleziono pliku data.json");
+        }
+
+        const dane = await response.json();
 
         const ulUmiejetnosci = document.getElementById('lista-umiejetnosci');
-        dane["umiejętności"].forEach(umiejętność => {
+        dane.umiejetnosci.forEach(umiejetnosc => {
             const li = document.createElement('li');
-            li.textContent = umiejętność;
+            li.textContent = umiejetnosc;
             ulUmiejetnosci.appendChild(li);
         });
 
         const ulJezyki = document.getElementById('lista-jezykow');
-        dane["języki"].forEach(język => {
+        dane.jezyki.forEach(jezyk => {
             const li = document.createElement('li');
-            li.textContent = język;
+            li.textContent = jezyk;
             ulJezyki.appendChild(li);
         });
 
-        console.log("Dane zostały pomyślnie wczytane z JSON");
+        console.log("75565: Dane z JSON zostały wczytane poprawnie");
     } catch (error) {
-        console.error("Błąd podczas wczytywania danych:", error);
+        console.error("Błąd:", error);
     }
 }
 
