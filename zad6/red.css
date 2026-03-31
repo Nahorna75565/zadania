@@ -1,0 +1,191 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff0f0;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.cv-paper {
+  width: 850px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 2px solid #e74c3c;
+}
+
+header {
+  display: flex;
+  background-color: #c0392b;
+  color: white;
+  padding: 30px;
+  align-items: center;
+}
+
+header h1 {
+  border-bottom: 2px solid #f5b7b1; 
+  padding-bottom: 5px;             
+  margin-bottom: 5px;              
+  display: inline-block;           
+}
+
+.photo-box {
+  width: 150px;
+  height: 150px;
+  margin-right: 40px;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.subtitle {
+  color: #f5b7b1;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+}
+
+.left-col {
+  width: 35%;
+  background-color: #e74c3c;
+  color: white;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill-category {
+  background-color: #922b21;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.right-col {
+  width: 65%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.section-content {
+  border-left: 4px solid #f5b7b1; 
+  padding: 10px 15px;             
+  background-color: #fff5f5;
+  border-radius: 0;                
+}
+
+.year {
+  font-weight: bold;
+  color: #e74c3c;
+}
+
+.contact-box {
+  margin-top: auto;
+  background-color: #922b21;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.contact-box a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-top: 5px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin: 5px;
+  padding: 4px;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+.controls {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9); 
+  padding: 15px;
+  border-radius: 50px; 
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+  border: none;
+}
+
+.controls button {
+  padding: 8px 15px; 
+  font-weight: bold;
+  font-size: 13px;
+  cursor: pointer;
+  border: 1px solid #ccc;
+  border-radius: 20px; 
+  background-color: #fff;
+  transition: all 0.3s ease;
+  margin: 0;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+#contactForm input, #contactForm textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+  font-family: inherit;
+  display: block;
+}
+
+#contactForm textarea {
+  height: 60px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #c0392b; 
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  display: block;
+  margin-top: 5px;
+}
+
+.submit-btn:hover {
+  background-color: #d5f5e3;
+}
+
+#error-message {
+  font-size: 11px;
+  margin-top: 5px;
+  line-height: 1.2;
+}
