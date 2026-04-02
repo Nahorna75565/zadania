@@ -58,34 +58,3 @@ formularz.addEventListener('submit', (e) => {
     }
 });
 
-async function wczytajDane() {
-    try {
-        const otrzymane = await fetch('./data.json');
-
-        if (!otrzymane.ok) {
-            throw new Error("75565: Nie znaleziono pliku data.json");
-        }
-
-        const dane = await otrzymane.json();
-
-        const listaUmiejetnosci = document.getElementById('lista-umiejetnosci');
-        dane.umiejetnosci.forEach(umiejetnosc => {
-            const item = document.createElement('li');
-            item.textContent = umiejetnosc;
-            listaUmiejetnosci.appendChild(item);
-        });
-
-        const listaJezykow = document.getElementById('lista-jezykow');
-        dane.jezyki.forEach(jezyk => {
-            const item = document.createElement('li');
-            item.textContent = jezyk;
-            listaJezykow.appendChild(item);
-        });
-
-        console.log("75565: Dane z JSON zostały wczytane poprawnie");
-    } catch (error) {
-        console.error("75565: Błąd:", error);
-    }
-}
-
-window.addEventListener('DOMContentLoaded', wczytajDane);
