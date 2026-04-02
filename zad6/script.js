@@ -1,0 +1,91 @@
+const themeButton = document.getElementById('przyciskMotywu');
+const stylesheetLink = document.querySelector('link[rel="stylesheet"]');
+
+themeButton.addEventListener('click', () => {
+    if (stylesheetLink.getAttribute('href') === 'green.css') {
+        stylesheetLink.setAttribute('href', 'red.css');
+    } else {
+        stylesheetLink.setAttribute('href', 'green.css');
+    }
+    console.log("75565: Zmiana motywu");
+});
+
+const toggleSectionButton = document.getElementById('przyciskSekcji');
+const projectsSection = document.getElementById('projectsSection');
+
+toggleSectionButton.addEventListener('click', () => {
+  const isHidden = getComputedStyle(projectsSection).display === 'none';
+  projectsSection.style.display = isHidden ? 'block' : 'none';
+  console.log("75565: Przełączenie sekcji");
+});
+
+const formElement = document.getElementById('contactForm');
+const errorMessage = document.getElementById('error-message');
+
+formElement.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const firstName = document.getElementById('firstName').value.trim();
+    const lastName = document.getElementById('lastName').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    let errors = [];
+
+    const namePattern = /^[a-zA-ZĄ-ż\s]+$/;
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!firstName || !lastName || !email || !message) {
+        errors.push("Wszystkie pola są obowiązkowe.");
+    } else {
+        if (!namePattern.test(firstName) || !namePattern.test(lastName)) {
+            errors.push("Imię i nazwisko nie mogą zawierać cyfr.");
+        }
+
+        if (!emailPattern.test(email)) {
+            errors.push("Podaj poprawny adres e-mail.");
+        }
+    }
+
+    if (errors.length > 0) {
+        errorMessage.style.color = "#ffcccc";
+        errorMessage.innerHTML = errors.join("<br>");
+    } else {
+        errorMessage.style.color = "#90ee90";
+        errorMessage.innerText = "Wysłano pomyślnie!";
+        console.log("75565: Formularz wysłany poprawnie");
+        formElement.reset();
+    }
+});
+
+async function wczytajDane() {
+    try {
+        const response = await fetch('./data.json');
+
+        if (!response.ok) {
+            throw new Error("Nie znaleziono pliku data.json");
+        }
+
+        const dane = await response.json();
+
+        const ulUmiejetnosci = document.getElementById('lista-umiejetnosci');
+        dane.umiejetnosci.forEach(umiejetnosc => {
+            const li = document.createElement('li');
+            li.textContent = umiejetnosc;
+            ulUmiejetnosci.appendChild(li);
+        });
+
+        const ulJezyki = document.getElementById('lista-jezykow');
+        dane.jezyki.forEach(jezyk => {
+            const li = document.createElement('li');
+            li.textContent = jezyk;
+            ulJezyki.appendChild(li);
+        });
+
+        console.log("75565: Dane z JSON zostały wczytane poprawnie");
+    } catch (error) {
+        console.error("Błąd:", error);
+    }
+}
+
+window.addEventListener('DOMContentLoaded', wczytajDane);

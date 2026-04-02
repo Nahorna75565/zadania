@@ -1,0 +1,16 @@
+{
+  "umiejetnosci": [
+    "Podstawy HTML i CSS",
+    "Projektowanie baz danych SQL",
+    "Podstawy programowania C#",
+    "Podstawy programowania Python",
+    "Praca zespołowa",
+    "Dobra organizacja pracy"
+  ],
+  "jezyki": [
+    "Polski - poziom C1",
+    "Ukraiński – poziom C2",
+    "Rosyjski – poziom C2",
+    "Angielski - poziom B2"
+  ]
+}
