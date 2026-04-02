@@ -1,8 +1,7 @@
-
-const themeButton = document.getElementById('przyciskMotywu');
+const redgreenButton = document.getElementById('przyciskMotywu');
 const stylesheetLink = document.querySelector('link[rel="stylesheet"]');
 
-themeButton.addEventListener('click', () => {
+redgreenButton.addEventListener('click', () => {
     if (stylesheetLink.getAttribute('href') === 'green.css') {
         stylesheetLink.setAttribute('href', 'red.css');
     } else {
@@ -11,56 +10,82 @@ themeButton.addEventListener('click', () => {
     console.log("75565: Zmiana motywu");
 });
 
+const przyciskSekcji = document.getElementById('przyciskSekcji');
+const sekcjaProjektow = document.getElementById('sekcjaProjektow');
 
-const toggleSectionButton = document.getElementById('przyciskSekcji');
-const projectsSection = document.getElementById('projectsSection');
-
-toggleSectionButton.addEventListener('click', () => {
-    if (projectsSection.style.display === 'none') {
-        projectsSection.style.display = 'block';
-    } else {
-        projectsSection.style.display = 'none';
-    }
+przyciskSekcji.addEventListener('click', () => {
+    const czyUkryta = getComputedStyle(sekcjaProjektow).display === 'none';
+    sekcjaProjektow.style.display = czyUkryta ? 'block' : 'none';
     console.log("75565: Przełączenie sekcji");
 });
 
+const formularz = document.getElementById('contactForm');
+const komunikatBledu = document.getElementById('errormsg');
 
-const formElement = document.getElementById('contactForm');
-const errorMessage = document.getElementById('error-message');
-
-formElement.addEventListener('submit', (e) => {
+formularz.addEventListener('submit', (e) => {
     e.preventDefault();
-    
 
-    const firstName = document.getElementById('firstName').value.trim();
-    const lastName = document.getElementById('lastName').value.trim();
+    const imie = document.getElementById('firstName').value.trim();
+    const nazwisko = document.getElementById('lastName').value.trim();
     const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    
-    let errors = [];
-    
-    const namePattern = /^[a-zA-ZĄ-ż\s]+$/;
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const wiadomosc = document.getElementById('message').value.trim();
 
-    if (!firstName || !lastName || !email || !message) {
-        errors.push("Wszystkie pola są obowiązkowe.");
+    let bledy = [];
+
+    const wzorzecKontaktowy = /^[a-zA-ZĄ-ż\s]+$/;
+    const wzorzecEmaila = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+    if (!imie || !nazwisko || !email || !wiadomosc) {
+        bledy.push("Wszystkie pola są obowiązkowe.");
     } else {
-        if (!namePattern.test(firstName) || !namePattern.test(lastName)) {
-            errors.push("Imię i nazwisko nie mogą zawierać cyfr.");
+        if (!wzorzecKontaktowy.test(imie) || !wzorzecKontaktowy.test(nazwisko)) {
+            bledy.push("Imię i nazwisko nie mogą zawierać cyfr.");
         }
-        
-        if (!emailPattern.test(email)) {
-            errors.push("Podaj poprawny adres e-mail.");
+
+        if (!wzorzecEmaila.test(email)) {
+            bledy.push("Podaj poprawny adres e-mail.");
         }
     }
 
-    if (errors.length > 0) {
-        errorMessage.style.color = "#ffcccc";
-        errorMessage.innerHTML = errors.join("<br>");
+    if (bledy.length > 0) {
+        komunikatBledu.style.color = "#ffcccc";
+        komunikatBledu.innerHTML = bledy.join("<br>");
     } else {
-        errorMessage.style.color = "#90ee90";
-        errorMessage.innerText = "Wysłano pomyślnie!";
+        komunikatBledu.style.color = "#90ee90";
+        komunikatBledu.innerText = "Wysłano pomyślnie!";
         console.log("75565: Formularz wysłany poprawnie");
-        formElement.reset();
+        formularz.reset();
     }
 });
+
+async function wczytajDane() {
+    try {
+        const otrzymane = await fetch('./data.json');
+
+        if (!otrzymane.ok) {
+            throw new Error("75565: Nie znaleziono pliku data.json");
+        }
+
+        const dane = await otrzymane.json();
+
+        const listaUmiejetnosci = document.getElementById('lista-umiejetnosci');
+        dane.umiejetnosci.forEach(umiejetnosc => {
+            const item = document.createElement('li');
+            item.textContent = umiejetnosc;
+            listaUmiejetnosci.appendChild(item);
+        });
+
+        const listaJezykow = document.getElementById('lista-jezykow');
+        dane.jezyki.forEach(jezyk => {
+            const item = document.createElement('li');
+            item.textContent = jezyk;
+            listaJezykow.appendChild(item);
+        });
+
+        console.log("75565: Dane z JSON zostały wczytane poprawnie");
+    } catch (error) {
+        console.error("75565: Błąd:", error);
+    }
+}
+
+window.addEventListener('DOMContentLoaded', wczytajDane);
