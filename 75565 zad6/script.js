@@ -63,7 +63,7 @@ async function wczytajDane() {
         const response = await fetch('./data.json');
 
         if (!response.ok) {
-            throw new Error("Nie znaleziono pliku data.json");
+            throw new Error("75565: Nie znaleziono pliku data.json");
         }
 
         const dane = await response.json();
@@ -84,7 +84,7 @@ async function wczytajDane() {
 
         console.log("75565: Dane z JSON zostały wczytane poprawnie");
     } catch (error) {
-        console.error("Błąd:", error);
+        console.error("75565: Błąd:", error);
     }
 }
 
