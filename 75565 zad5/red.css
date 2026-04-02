@@ -118,7 +118,7 @@ main {
 }
 
 .contact-box a:hover {
-  text-decoration: underline;
+  text-decoration: underline overline;
 }
 
 .controls {
