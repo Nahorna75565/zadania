@@ -101,6 +101,10 @@ main {
   margin-top: 5px;
 }
 
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
 .footer {
   text-align: center;
   font-size: 12px;
