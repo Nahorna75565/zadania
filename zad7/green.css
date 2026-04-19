@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f0f2f5;
+  display: flex;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.cv-paper {
+  width: 850px;
+  background: white;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  background-color: #2e8b57;
+  color: white;
+  padding: 30px;
+  align-items: center;
+}
+
+.photo-box {
+  width: 150px;
+  height: 150px;
+  margin-right: 40px;
+}
+
+.photo-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.subtitle {
+  color: #90ee90;
+  font-weight: bold;
+}
+
+main {
+  display: flex;
+}
+
+.left-col {
+  width: 35%;
+  background-color: #27ae60;
+  color: white;
+  padding: 25px 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.skill-category {
+  background-color: #1e8449;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.right-col {
+  width: 65%;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.section-content {
+  border: 2px solid #d5f5e3;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #f9fffb;
+}
+
+.year {
+  font-weight: bold;
+  color: #27ae60;
+}
+
+.contact-box {
+  margin-top: auto;
+  background-color: rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.contact-box a {
+  color: white;
+  text-decoration: none;
+  display: block;
+  margin-top: 5px;
+}
+
+.footer {
+  text-align: center;
+  font-size: 12px;
+  color: #888;
+  margin: 5px;
+  padding: 4px;
+}
+
+.contact-box a:hover {
+  text-decoration: underline;
+}
+
+.controls {
+  position: fixed;   
+  bottom: 20px;
+  right: 20px;
+  background: rgba(255, 255, 255, 0.9); 
+  padding: 15px;
+  border-radius: 50px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  z-index: 1000;
+  display: flex;
+  gap: 10px;
+}
+
+.controls button {
+  padding: 8px 15px;
+  font-weight: bold;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  cursor: pointer;
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.form-group {
+  margin-bottom: 8px;
+}
+
+#contactForm input, #contactForm textarea {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  font-size: 13px;
+}
+
+#contactForm textarea {
+  height: 60px;
+  resize: none;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ffffff;
+  color: #1e8449;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.submit-btn:hover {
+  background-color: #d5f5e3;
+}
+
+#error-message {
+  font-size: 11px;
+  margin-top: 5px;
+  line-height: 1.2;
+}
+
+.notes-container { margin-top: 20px; }
+.notes-input-group { display: flex; gap: 10px; margin-bottom: 15px; }
+
+#pole-notatki {
+  flex-grow: 1;
+  padding: 10px;
+  border: 1px solid #27ae60;
+  border-radius: 4px;
+}
+
+#listadla-notatek { 
+  list-style: none; 
+  padding: 0; 
+}
+.note-item {
+  background-color: #f9fffb;
+  border: 1px solid #d5f5e3;
+  padding: 12px;
+  margin-bottom: 8px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #2c3e50;
+}
+
+.delete-note-btn {
+  background: none;
+  border: none;
+  color: #e74c3c;
+  cursor: pointer;
+  font-size: 18px;
+  transition: transform 0.2s;
+}
+
+.delete-note-btn:hover { 
+transform: scale(1.2); 
+}
