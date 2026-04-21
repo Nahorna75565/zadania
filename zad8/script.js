@@ -51,10 +51,25 @@ formularz.addEventListener('submit', (e) => {
         komunikatBledu.style.color = "#ffcccc";
         komunikatBledu.innerHTML = bledy.join("<br>");
     } else {
-        komunikatBledu.style.color = "#90ee90";
-        komunikatBledu.innerText = "Wysłano pomyślnie!";
-        console.log("75565: Formularz wysłany poprawnie");
-        formularz.reset();
+        fetch('http://localhost:56557/zapisz', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({ imie, nazwisko, email, wiadomosc })
+        })
+        .then(response => response.json())
+        .then(data => {
+            komunikatBledu.style.color = "#90ee90";
+            komunikatBledu.innerText = "Wysłano pomyślnie!";
+            console.log("75565: Formularz wysłany i zapisany na serwerze");
+            formularz.reset();
+        })
+        .catch(error => {
+            komunikatBledu.style.color = "orange";
+            komunikatBledu.innerText = "Błąd serwera";
+            console.error("75565: Błąd połączenia z serwerem:", error);
+        });
     }
 });
 
