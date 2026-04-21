@@ -48,29 +48,31 @@ formularz.addEventListener('submit', (e) => {
     }
 
     if (bledy.length > 0) {
-        komunikatBledu.style.color = "#ffcccc";
-        komunikatBledu.innerHTML = bledy.join("<br>");
-    } else {
-        fetch('http://localhost:56557/zapisz', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify({ imie, nazwisko, email, wiadomosc })
-        })
-        .then(response => response.json())
-        .then(data => {
-            komunikatBledu.style.color = "#90ee90";
-            komunikatBledu.innerText = "Wysłano pomyślnie!";
-            console.log("75565: Formularz wysłany i zapisany na serwerze");
-            formularz.reset();
-        })
-        .catch(error => {
-            komunikatBledu.style.color = "orange";
-            komunikatBledu.innerText = "Błąd serwera";
-            console.error("75565: Błąd połączenia z serwerem:", error);
-        });
-    }
+    komunikatBledu.style.color = "#ffcccc";
+    komunikatBledu.innerHTML = bledy.join("<br>");
+} else {
+    const dane = `Data: ${new Date().toLocaleString()}
+Imię: ${imie}
+Nazwisko: ${nazwisko}
+Email: ${email}
+Wiadomość: ${wiadomosc}
+------------------------
+
+`;
+
+    const blob = new Blob([dane], { type: 'text/plain' });
+    const link = document.createElement('a');
+
+    link.href = URL.createObjectURL(blob);
+    link.download = 'baza_danych.txt';
+    link.click();
+
+    komunikatBledu.style.color = "#90ee90";
+    komunikatBledu.innerText = "Zapisano do pliku!";
+    console.log("75565: Dane zapisane do pliku (download)");
+
+    formularz.reset();
+}
 });
 
 
